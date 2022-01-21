@@ -71,6 +71,10 @@ body {
   justify-content: space-between;
 }
 
+.fa-times:hover {
+  color: blue;
+}
+
 .add-form {
   margin-bottom: 40px;
 }
