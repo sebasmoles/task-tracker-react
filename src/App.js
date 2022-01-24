@@ -23,7 +23,14 @@ function App() {
       "day": "Feb 7th at 3:30pm",
       "reminder": false
     }
-  ]); 
+  ]);
+
+  const [showAddTask, setShowAddTask] = useState(false);
+
+  // Add Task
+  const addTask = (task) => {
+    console.log(task);
+  }
   
   // Delete Task
   const deleteTask = (id) => {
@@ -37,8 +44,8 @@ function App() {
 
   return (
     <div className='container'>
-      <Header />
-      <AddTask />
+      <Header toggleAddTask={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
+      {showAddTask && (<AddTask onAdd={addTask} />)}
       {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onDoubleClick={toggleReminder} />) : ('No tasks to show')}
     </div>
   );
