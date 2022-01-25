@@ -5,7 +5,7 @@ const Task = ({ task, onDelete, onDoubleClick }) => {
   return (
     <div className={`task ${task.reminder ? 'reminder' : ''}`} onDoubleClick={() => onDoubleClick(task.id)}>
         <h3>{ task.text }  <FaTimes className='fa-times' onClick={() => onDelete(task.id)} /></h3>
-        <p>{ task.day }</p>
+        <p>{ task.date }</p>
     </div>
   )
 };
